@@ -10,7 +10,7 @@ H5端自适应框架
 
 2，在webpack中作为一个loader实现px到rem的实时转换
 
-###使用方法：
+### 使用方法：
 
 代码引用方法一：
     
@@ -42,7 +42,7 @@ H5端自适应框架
     window['adaptive'].init();
 </script>
 ```
-##优先加载该JS，并执行
+## 优先加载该JS，并执行
 
 
 然后在css中设置相应样式即可： 设计图的1px对应0.01rem,设计图的24px对应0.24rem,就是如此简单！
@@ -87,7 +87,7 @@ body * {
 // 将1rem转换为像素值
 window['adaptive'].remToPx(1) 
 ```
-###adaptivejs原理：  
+### adaptivejs原理：  
 
     最最理想的解决方案当然是设计图和手机屏幕的像素点一一对应，就像我们在PC端所做的一样。拿750px宽的设计图来说，如果手机屏幕的水平分辨率是750px，那么这样是最理想最完美的，对于水平分辨率不是750px的屏幕呢？这个时候我们把设计图进行缩放，使其宽度刚好与屏幕的分辨率相等，即是等比例缩放设计图，使其宽度刚好覆盖手机屏幕。
     如果我们使用<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui" name="viewport">这种常用标签，视觉同学经常会抱怨1px过粗的问题，这个时候我们需要缩放viewport来达到真正还原1px的效果。
@@ -98,7 +98,7 @@ window['adaptive'].remToPx(1)
     对于iphone的retina高清显示屏，基本版本(adaptive.js)我们做了缩放处理，以达到最佳显示效果。 对于快速开发版本(adaptive-version2.js),viewport的width等于设备宽度，不会缩放
     如果只是webview里，可以使用 adaptive-version3.js 在IOS和安卓下都会缩放，否则还是谨慎使用此版本，抱歉
     
-###注意：可能存在0.01rem将小于1px而不显示的问题,故如果设计图是1px,在css中仍然用1px显示。
+### 注意：可能存在0.01rem将小于1px而不显示的问题,故如果设计图是1px,在css中仍然用1px显示。
  可用的全局变量：window.devicePixelRatioValue 当前页面设置的设备像素比
 
 ### 关于3个版本
@@ -116,7 +116,7 @@ window['adaptive'].scaleType = 3 // 无论iphone还是安卓手机，都能精�
 
 2016-9-22 修复vivo 华为P7 rem展示不准确问题
 
-###部分兼容性问题解决方法
+### 部分兼容性问题解决方法
     1，部分chrome版本局部刷新时字体过大问题
     插入数据后调用方法：
     window.adaptive.reflow();
